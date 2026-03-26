@@ -1,14 +1,17 @@
-import type { Build } from "@/entities/build/model/types";
-import type { Genre } from "@/entities/genre/model/types";
+export type ModCategory =
+    | "gameplay"
+    | "graphics"
+    | "ui"
+    | "audio"
+    | "fixes"
+    | "quality-of-life";
 
-export type Game = {
+export type Mod = {
     id: string;
     slug: string;
     title: string;
-    shortDescription: string;
-    releaseDate: string | null;
-    steamUrl: string | null;
-    headerImageUrl: string | null;
-    genres: Genre[];
-    build: Build | null;
+    summary: string;
+    category: ModCategory;
+    url: string | null;
+    isFeatured: boolean;
 };
